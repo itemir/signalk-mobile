@@ -128,7 +128,9 @@ export class PanelPage {
     if ('name' in data)
       this.signalK.selfId = data.self
     else if ('context' in data) {
-      let vesselId = data.context.replace('vessels.','');
+      // let vesselId = data.context.replace('vessels.','');
+      let vesselId = data.context
+      // console.log("I am here inside context", vesselId, this.signalK.selfId)
       if (vesselId == this.signalK.selfId) {
         for (let i=0;i<data.updates.length;i++) {
           let values=data.updates[i].values;
